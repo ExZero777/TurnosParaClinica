@@ -1,18 +1,27 @@
 package visual;
 
 import controladores.ControladorBienvenidoEntrar;
+import controladores.ControladorBienvenidoRegistrar;
+import controladores.ControladorBienvenidoWindowKey;
 
 
 public class Bienvenido extends javax.swing.JFrame {
 
       public Bienvenido() {
-        initComponents();
+                initComponents();
         this.setLocationRelativeTo(null);
         controladorEntar = new ControladorBienvenidoEntrar(textUsu, textCont);
         botIng.addMouseListener(controladorEntar);
        
-        
+        controladorRegistrar = new ControladorBienvenidoRegistrar(); //genero un objeto
+        botReg.addMouseListener(controladorRegistrar); //agrego una accion a el boton
 
+        controladorWindowRegKey = new ControladorBienvenidoWindowKey();
+        this.addKeyListener(controladorWindowRegKey);
+        textUsu.addKeyListener(controladorWindowRegKey);
+        textCont.addKeyListener(controladorWindowRegKey);
+        //clase abstracta es una clase que se le define metodo , clase pero no tiene codigo por ningun lado , te define un trabajo
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -138,21 +147,17 @@ public class Bienvenido extends javax.swing.JFrame {
 
     private void botSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botSalirActionPerformed
   
-        System.exit(0);
+        
     }//GEN-LAST:event_botSalirActionPerformed
 
     private void botIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botIngActionPerformed
 
-        botIng.transferFocus();
+      
         
     }//GEN-LAST:event_botIngActionPerformed
 
     private void botRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botRegActionPerformed
 
-        botReg.transferFocus();
-        Registrar regis = new Registrar();
-        regis.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_botRegActionPerformed
 
     private void botReg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botReg1ActionPerformed
@@ -165,18 +170,16 @@ public class Bienvenido extends javax.swing.JFrame {
 
     private void botPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botPersonalActionPerformed
         
-        Seguridad seg = new Seguridad();
-        seg.setVisible(true);
-        this.setVisible(false);
+       
     }//GEN-LAST:event_botPersonalActionPerformed
 
     private void textUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUsuActionPerformed
         
-        textUsu.transferFocus();
+
     }//GEN-LAST:event_textUsuActionPerformed
 
     private void textContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textContActionPerformed
-      textCont.transferFocus();
+      
     }//GEN-LAST:event_textContActionPerformed
 
     
@@ -198,7 +201,7 @@ public class Bienvenido extends javax.swing.JFrame {
     private javax.swing.JTextField textUsu;
     // End of variables declaration//GEN-END:variables
     private ControladorBienvenidoEntrar controladorEntar;
-  
-
+    private ControladorBienvenidoRegistrar controladorRegistrar;
+    private ControladorBienvenidoWindowKey controladorWindowRegKey;
    
 }

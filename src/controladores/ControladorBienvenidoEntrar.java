@@ -31,7 +31,8 @@ public class ControladorBienvenidoEntrar implements MouseListener {
     
     @Override
     public void mouseClicked(MouseEvent e) {
-        Coneccion conn = new Coneccion("localhost", "root", "", "base_turnos");
+       if (e.getButton()==1){
+         Coneccion conn = new Coneccion("localhost", "root", "", "base_turnos");
         try {
             conn.conectar();
             Consulta unaConsulta = new Consulta();
@@ -42,7 +43,9 @@ public class ControladorBienvenidoEntrar implements MouseListener {
             Logger.getLogger(ControladorBienvenidoEntrar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ControladorBienvenidoEntrar.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }    
+       }
+      
     }
 
     @Override
