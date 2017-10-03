@@ -8,7 +8,7 @@ import controladores.ControladorBienvenidoWindowKey;
 public class Bienvenido extends javax.swing.JFrame {
 
       public Bienvenido() {
-                initComponents();
+        initComponents();
         this.setLocationRelativeTo(null);
         controladorEntar = new ControladorBienvenidoEntrar(textUsu, textCont);
         botIng.addMouseListener(controladorEntar);
@@ -20,7 +20,7 @@ public class Bienvenido extends javax.swing.JFrame {
         this.addKeyListener(controladorWindowRegKey);
         textUsu.addKeyListener(controladorWindowRegKey);
         textCont.addKeyListener(controladorWindowRegKey);
-        //clase abstracta es una clase que se le define metodo , clase pero no tiene codigo por ningun lado , te define un trabajo
+       
         
     }
 

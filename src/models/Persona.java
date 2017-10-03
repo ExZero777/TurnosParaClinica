@@ -18,6 +18,10 @@ public class Persona {
         this.dni = dni;
     }
 
+    public Persona(String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getId() {
         return id;
     }
@@ -72,6 +76,10 @@ public class Persona {
 
     public void setContraseña(Integer contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public void add(Persona persona) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

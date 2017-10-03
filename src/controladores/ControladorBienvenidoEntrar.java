@@ -21,12 +21,13 @@ import models.Persona;
  * @author Miguel Angel
  */
 public class ControladorBienvenidoEntrar implements MouseListener {
-    private JTextField pUsu, pClave;
+    private final JTextField textUsu;
+    private final JTextField textCont;
     private Persona unaPersona;
 
-    public ControladorBienvenidoEntrar(JTextField pUsu, JTextField pClave) {
-        this.pUsu = pUsu;
-        this.pClave = pClave;
+    public ControladorBienvenidoEntrar(JTextField textUsu, JTextField textCont) {
+        this.textUsu = textUsu;
+        this.textCont = textCont;
     }
     
     @Override
@@ -36,7 +37,7 @@ public class ControladorBienvenidoEntrar implements MouseListener {
         try {
             conn.conectar();
             Consulta unaConsulta = new Consulta();
-            unaPersona = unaConsulta.recuperarPersonaUsuClave(conn.getCnx(), pUsu.getText(), pClave.getText());
+            unaPersona = unaConsulta.recuperarPersonaUsuClave(conn.getCnx(), textUsu.getText(), textCont.getText());
             System.out.println(unaPersona);
             conn.cerrar();
         } catch (SQLException ex) {
